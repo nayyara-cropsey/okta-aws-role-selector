@@ -1,0 +1,26 @@
+# log level for logs emitted by this app
+log_level: DEBUG
+
+server:
+  # base-64 encoded metadata for Okta app
+  # use an online tool like: https://www.base64encode.org/ to encode Okta app metadata
+  idp_metadata: ""
+
+  # the endpoint URL through which this app is publicly accessible
+  # must match "ACS URL" configured in Okta app
+  sp_url: ""
+
+  # default URL for accounts not found under "account_urls" section
+  default_url: "/example"
+
+  # do not show accounts not under "account_aliases" in role selector screen
+  hide_unaliased_accounts: true
+
+  # aliases for account numbers - this is static since this app does interact with AWS directly
+  account_aliases:
+    "000000000000": integration
+
+  # URLs to delegate SAML login for each account ID
+  # lets you deploy an app per AWS account e.g. int, qa, prod
+  account_urls:
+    "00000000000": "http://my-integration-app.com/api/saml"
