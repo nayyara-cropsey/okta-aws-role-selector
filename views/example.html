@@ -1,0 +1,12 @@
+{{define "message"}}
+{{end}}
+{{define "content"}}
+<div id="content">
+    <h2>SAML Parameters</h2>
+    <p>This is an example handler for role selection. It simply echoes back the parameters it receives.</p>
+    <b>Session Name</b>: {{.Data.SessionName}} <br/>
+    <b>Selected Role</b>: {{.SelectedRole}}<br/>
+    <b>SAML Response</b>:<br/>
+    <pre>{{.Data.RawSAML}}</pre>
+</div>
+{{end}}

@@ -1,0 +1,36 @@
+{{define "message"}}
+{{end}}
+{{define "content"}}
+<div id="content">
+    <h2>Welcome!</h2>
+    Okta AWS Role Selector is an app for extracting AWS roles from a SAML assertion similar to the AWS SAML console: <a
+        href="https://signin.aws.amazon.com/saml">https://signin.aws.amazon.com/saml</a>.
+
+    <h4>Usecase</h4>
+    <p>
+        Okta AWS Role Selector is used to co-ordinate role selection for an app that authenticate users using an AWS
+        SAML assertion (setup with Okta).
+        <br>
+        <p>
+            Such an app might use the SAML assertion with STS and <b><i>AssumeWithSAML</i></b> to obtain a temporary AWS
+            STS token for internal use.
+        </p>
+        <p>
+            Because the SAML assertions contains multiple AWS roles that the user can assume, you can use this app as a
+            middleware for role selection using a browser-based workflow.
+        </p>
+    </p>
+
+    <h4>More Info</h4>
+    <p>
+        For setting up an app to provide the SAML assertion, see <a
+            href="https://saml-doc.okta.com/SAML_Docs/How-to-Configure-SAML-2.0-for-Amazon-Web-Service#scenarioB">Okta
+        AWS authentication</a>
+    </p>
+    <p>
+        For detailed explanation, see the <a
+            href="https://github.com/nayyara-samuel/okta-aws-role-selector">Github
+        project</a>.
+    </p>
+</div>
+{{end}}

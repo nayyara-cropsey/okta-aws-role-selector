@@ -19,7 +19,7 @@ func CreateSAMLSessionInfo(assertions *saml2.AssertionInfo) (*SAMLInfo, error) {
 
 	// available roles
 	values := assertions.Values[AvailableRoles].Values
-	logger.Infof("Test: %s", values)
+	logger.Infof("Parsed SAML assertions: %s", values)
 	if len(values) > 0 {
 		var convertedValues []string
 		for _, value := range values {

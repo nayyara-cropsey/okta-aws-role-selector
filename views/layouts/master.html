@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <link rel="stylesheet" type="text/css" href="ui.css">
+    <title>Okta AWS Role Selector</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <script type="text/javascript">
+        function useUrl(frm, nm) {
+            for (var i = 0, items = frm.elements; i < items.length; i++)
+                if (items[i].name == nm && items[i].checked)
+                    frm.action = items[i].alt;
+        }
+    </script>
+</head>
+<body>
+
+<span class="header">
+    <img class="logo" src="./okta.png" alt=""/>
+    <span class="home-link">AWS Role Selector</span>
+</span>
+
+<div class="frame">
+    <span id="message">{{template "message" .}}</span>
+    <hr/>
+
+    {{template "content" .}}
+
+    <hr/>
+    <div class="footer">AWS role selector for Okta. <a href="https://github.com/nayyara-samuel/okta-aws-role-selector"
+                                                       class="code">Github</a></div>
+</div>
+
+</body>
+</html>

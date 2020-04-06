@@ -1,0 +1,29 @@
+{{define "message"}}
+Select a role (<b>{{.Data.SessionName}}</b>):
+{{end}}
+
+{{define "content"}}
+<div id="content">
+    <form id="role-form" method="post" action="#" onclick="useUrl(this, 'SelectedRoleARN')">
+        <div id="role-selector">
+            {{range .Data.Accounts}}
+            <div>
+                <div class="account">
+                    <b>Account</b>: {{.Alias}} ({{.ID}})
+                </div>
+                {{range .Roles}}
+                <div class="role">
+                    <input type="radio" name="SelectedRoleARN" value="{{.Arn}}" alt="{{.Url}}"> {{.Name}}</input>
+                </div>
+                {{end}}
+            </div>
+            {{end}}
+        </div>
+
+        <input id="saml-response" type="hidden" name="SAMLResponse" value="{{.Data.RawSAML}}"/>
+        <div class="center">
+            <input type="submit" class="button" value="Submit">
+        </div>
+    </form>
+</div>
+{{end}}

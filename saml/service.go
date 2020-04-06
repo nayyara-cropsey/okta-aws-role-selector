@@ -84,7 +84,7 @@ func (s *SAMLService) SAMLRequestURL() (string, error) {
 }
 
 func (s *SAMLService) ParseSAMLResponse(samlResponse string) (*SAMLInfo, error) {
-	s.log.Debugf("Parsing SAML response: %s", samlResponse)
+	s.log.Debug("Parsing SAML response")
 	assertionInfo, err := s.sp.RetrieveAssertionInfo(samlResponse) // also verifies signature
 	if err != nil {
 		return nil, err
@@ -105,7 +105,5 @@ func (s *SAMLService) ParseSAMLResponse(samlResponse string) (*SAMLInfo, error) 
 
 	sessionInfo.RawSAML = samlResponse
 	s.log.Debugf("Got session info from SAML: %v", sessionInfo)
-
-	logger.Debugf("SAML Info: %s", sessionInfo)
 	return sessionInfo, nil
 }
