@@ -67,7 +67,7 @@ var serverCmd = &cobra.Command{
 		}
 		api.POST("/example", exampleHandler)
 
-		return api.Run(":8080")
+		return api.Run(":80")
 	},
 }
 
