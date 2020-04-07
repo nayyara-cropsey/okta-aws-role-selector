@@ -28,7 +28,7 @@ Latest Docker image is pushed to `nayyarasamuel7/okta-aws-role-selector`. To run
 ##### Example run:
 
 ```bash 
-docker run -p 8080:8080 -v $(HOME):/root/config nayyarasamuel7/okta-aws-role-selector:latest  -c config/my_config.yaml
+docker run -p 80:80 -v $(HOME):/root/config nayyarasamuel7/okta-aws-role-selector:latest  -c config/my_config.yaml
 ```
 
 ## Screenshots
