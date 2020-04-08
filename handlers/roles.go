@@ -5,7 +5,6 @@ import (
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"okta-aws-role-selector/saml"
-	"strings"
 )
 
 const (
@@ -36,7 +35,7 @@ func RolesHandler(templatePage string, config *saml.Config) (gin.HandlerFunc, er
 		relayState := ctx.PostForm(RelayStateParam)
 		if relayState != "" {
 			for _, account := range samlInfo.Accounts {
-				if strings.Contains(relayState, account.Url) {
+				if relayState == account.ID {
 					samlInfo.Accounts = []*saml.Account{account}
 					break
 				}
