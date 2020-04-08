@@ -58,7 +58,12 @@ func RolesHandler(templatePage string, config *saml.Config) (gin.HandlerFunc, er
 			for _, account := range samlInfo.Accounts {
 				if relayState.AccountID == account.ID {
 					if relayState.IsDev {
-						account.Url = config.DevAccountUrls[relayState.AccountID]
+						devUrl := config.DevAccountUrls[relayState.AccountID]
+						account.Url = devUrl
+						for _, role := range account.Roles {
+							role.Url = devUrl
+						}
+						logger.Debugf("Setting URL to dev: %v", account.Url)
 					}
 					samlInfo.Accounts = []*saml.Account{account}
 					break
