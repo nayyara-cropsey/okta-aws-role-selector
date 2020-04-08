@@ -3,7 +3,6 @@ package saml
 type SAMLInfo struct {
 	SessionName     string
 	SessionDuration int
-	Url             string
 	Accounts        []*Account
 	RawSAML         string
 }

@@ -22,5 +22,12 @@ server:
 
   # URLs to delegate SAML login for each account ID
   # lets you deploy an app per AWS account e.g. int, qa, prod
+  # RelayState = 00000000000
   account_urls:
     "00000000000": "http://my-integration-app.com/api/saml"
+
+  # URLs to delegate SAML login for each account ID during dev
+  # lets you deploy an app per AWS account e.g. int, qa, prod
+  # RelayState = Dev/00000000000
+  dev_account_urls:
+    "00000000000": "http://localhost:80/api/saml"

@@ -7,6 +7,7 @@ type Config struct {
 	AccountAliases        map[string]string `mapstructure:"account_aliases"`
 	DefaultUrl            string            `mapstructure:"default_url"`
 	AccountUrls           map[string]string `mapstructure:"account_urls"`
+	DevAccountUrls        map[string]string `mapstructure:"dev_account_urls"`
 	IdpMetadata           string            `mapstructure:"idp_metadata"`
 	HideUnaliasedAccounts bool              `mapstructure:"hide_unaliased_accounts"`
 }
